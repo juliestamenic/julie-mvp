@@ -31,7 +31,7 @@ function PlantSitterForm(props)  {
  const [plants , setPlants] = useState(null);
   const addPlant = (event) => {
     event.preventDefault()
-    setPlants(plants +5)
+    setPlants(plants +1)
   }
 
 // Submitting the form
@@ -63,13 +63,13 @@ function PlantSitterForm(props)  {
             >
             </input>
           </label>
-          
+
           <label> Location
            <select 
            name="location" 
            value={location} 
            onChange={handleChange}>
-            <option id="empty" ></option>
+           <option id="empty" ></option>
             <option id="ciutat vella" >Ciutat Vella</option>
             <option id="Eixample" >Eixample</option>
             <option id="Gràcia" >Gràcia</option>
@@ -84,14 +84,14 @@ function PlantSitterForm(props)  {
           </label>
 
 
-         <label> Happy to host up to 
-            <button onClick={addPlant}> Add + 5 </button>
+         <label> Number of Plants to be sitted
+            <button onClick={addPlant}> Add </button>
             <h3> {plants} </h3>
           </label>
 
           <Calendar />
 
-          <button> Offer my help</button>
+          <button> Let's find my Plant-Sitter !</button>
        </form>
       </div>
     )
