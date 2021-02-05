@@ -6,8 +6,7 @@ function PlantSitterForm(props)  {
 
   const [name , setName] = React.useState('');
   const [location , setLocation] = React.useState('');
-  const [radius, setRadius] = React.useState('');
-  // const [date, setDate] = React.useState('Today');
+  const [plants , setPlants] = useState(null);
       
 //Handle change for town and radius
   function handleChange(event) {
@@ -16,8 +15,8 @@ function PlantSitterForm(props)  {
       case "name":
         setName(event.target.value);
         break;
-      case "radius":
-        setRadius(event.target.value);
+      case "plants":
+        setPlants(event.target.value);
         break;
       case "location":
         setLocation(event.target.value);
@@ -28,7 +27,7 @@ function PlantSitterForm(props)  {
  }
 
  //Plant counter
- const [plants , setPlants] = useState(null);
+
   const addPlant = (event) => {
     event.preventDefault()
     setPlants(plants +1)
@@ -39,12 +38,12 @@ function PlantSitterForm(props)  {
       event.preventDefault();
       console.log(
       `A request has been logged: 
-      From ${name} in ${location} within ${radius} KM for ${plants} plant(s)
+      From ${name} in ${location} for ${plants} plant(s)
       `)
       setLocation("");
-      setRadius("");
       setName("");
       setPlants(null);
+
   }
 
   //Select the time frame

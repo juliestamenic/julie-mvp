@@ -8,22 +8,39 @@ function Calendar () {
 const [startDate, setStartDate] = useState(new Date());
 const [endDate, setEndDate] = useState(new Date());
 
-function handleClick(event) {
-    event.preventDefault();
-    console.log(`Request logged between ${startDate}, and ${endDate}`)
-}
+// function handleClick(event) {
+//     event.preventDefault();
+//     console.log(`Request logged between ${startDate}, and ${endDate}`)
+// }
 
+function handleChange() {
+  setStartDate(startDate);
+  console.log(startDate)
+  // switch (event.target) {
+  //   case "startDate":
+  //     setStartDate(event.target.value);
+  //     console.log(`${startDate}`)
+  //     break;
+  //   case "endDate":
+  //     setEndDate(event.target.value);
+  //     break;
+  //   default:
+  //     break;
+  // }
+}
 
  return (
    <div>
-    <form> Timeframe
+    <form> 
+      Timeframe
     <label> Beginning date
      <DatePicker 
        selected={startDate}
        selectsStart
        startDate={startDate}
        endDate={endDate}
-       onChange={date => setStartDate(date)}
+       onChange={handleChange}
+      //  {date => setStartDate(date)}
      />
      </label>
      <label> End date
@@ -33,10 +50,11 @@ function handleClick(event) {
        startDate={startDate}
        endDate={endDate}
        minDate={startDate}
-       onChange={date => setEndDate(date)}
+       onChange={handleChange}
+       //{date => setEndDate(date)}
      />
      </label>
-     <button onClick={handleClick}> Save </button>
+     {/* <button onClick={handleClick}> Save </button> */}
      </form>
    </div>
  );
