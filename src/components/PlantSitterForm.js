@@ -33,7 +33,7 @@ function PlantSitterForm()  {
  //Plant counter
   const addPlant = (event) => {
     event.preventDefault()
-    setPlantsSitter(plantsSitter +5)
+    setPlantsSitter(plantsSitter +1)
   }
 
   const removePlant = (event) => {

@@ -33,12 +33,8 @@ const BasicInfoForm = ({name, handleChange, location , addPlant, plants, removeP
 
 
          <label> Number of Plants to be sitted
-            <button onClick={addPlant}> Add </button>
-            {plants} 
-          </label>
-
-          <label>
-            <button onClick={removePlant}> Remove </button>
+            <button onClick={addPlant}> + </button>
+            <button onClick={removePlant}> - </button>
             {plants} 
           </label>
           </div>
