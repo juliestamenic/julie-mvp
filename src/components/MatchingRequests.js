@@ -1,15 +1,10 @@
 import React  from "react";
 
-
-const MatchingRequests = () => {
-
-
-  return ( 
+const MatchingRequests = () => ( 
     <div>
-        Here is the Dashboard
+        <label>
+        </label>
     </div>
   )
-
-}
 
 export default MatchingRequests;
