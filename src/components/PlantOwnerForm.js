@@ -43,10 +43,14 @@ function PlantSitterForm(props)  {
       setLocation("");
       setName("");
       setPlants(null);
-
+      handleCalChange()
   }
 
   //Select the time frame
+    function handleCalChange(date, name) {
+      // when changed, add value in the handleSubmit
+     props.handleChangeDates(date,name)
+    }
  
 
     return (
@@ -88,7 +92,9 @@ function PlantSitterForm(props)  {
             <h3> {plants} </h3>
           </label>
 
-          <Calendar />
+          <Calendar 
+          name="Dates"
+          onChange={(date)=>handleCalChange(date, "Dates")} />
 
           <button> Let's find my Plant-Sitter !</button>
        </form>

@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-function Calendar () {
+function Calendar (props) {
 
 const [startDate, setStartDate] = useState(new Date());
 const [endDate, setEndDate] = useState(new Date());
@@ -13,20 +13,17 @@ const [endDate, setEndDate] = useState(new Date());
 //     console.log(`Request logged between ${startDate}, and ${endDate}`)
 // }
 
-function handleChange() {
-  setStartDate(startDate);
-  console.log(startDate)
-  // switch (event.target) {
-  //   case "startDate":
-  //     setStartDate(event.target.value);
-  //     console.log(`${startDate}`)
-  //     break;
-  //   case "endDate":
-  //     setEndDate(event.target.value);
-  //     break;
-  //   default:
-  //     break;
-  // }
+function handleChangeDates(date, name) {
+  if (name==="startDate") 
+  {
+    console.log(`Startdate:" ${startDate}`)
+    setStartDate(date)
+  }
+  if (name==="endDate") 
+  {
+    console.log(`EndDate:" ${endDate}`)
+    setEndDate(date)
+  }
 }
 
  return (
@@ -35,22 +32,24 @@ function handleChange() {
       Timeframe
     <label> Beginning date
      <DatePicker 
+       name = "startDate"
        selected={startDate}
        selectsStart
        startDate={startDate}
        endDate={endDate}
-       onChange={handleChange}
+       onChange={(date)=>handleChangeDates(date, "startDate")}
       //  {date => setStartDate(date)}
      />
      </label>
      <label> End date
      <DatePicker
+       name = "endDate"
        selected={endDate}
        selectsEnd
        startDate={startDate}
        endDate={endDate}
        minDate={startDate}
-       onChange={handleChange}
+       onChange={(date)=>handleChangeDates(date, "endDate")}
        //{date => setEndDate(date)}
      />
      </label>

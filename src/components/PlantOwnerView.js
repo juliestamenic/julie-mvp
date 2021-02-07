@@ -6,7 +6,7 @@ const PlantOwnerView = () => {
 
 
   return ( 
-    <PlantOwnerForm />
+    <PlantOwnerForm  />
   )
 
 }

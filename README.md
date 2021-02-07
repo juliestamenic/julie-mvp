@@ -69,8 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### Structure of the App
 
-git remote add origin https://github.com/juliestamenic/theluckyplantapp.git
-git branch -M main
-git push origin main
-
+App
+    Components: 
+        Plant Owner View
+            Plant Owner Form
+            Calendar
+        Plant Sitter View
+            Plant Sitter Form
+            Calendar
+        Matching Requests 
