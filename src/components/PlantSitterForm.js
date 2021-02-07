@@ -9,6 +9,7 @@ function PlantSitterForm(props)  {
   const [plants , setPlants] = useState(null);
 
 
+
 //Handle change for name and location
   function handleChange(event) {
     // console.log(event.target.value)
@@ -33,9 +34,9 @@ function PlantSitterForm(props)  {
     setPlants(plants +5)
   }
 
-  function handleCalChange () {
+  // function handleCalChange () {
   
-  }
+  // }
 
 // Submitting the form
   function handleSubmit(event) {
@@ -94,7 +95,7 @@ function PlantSitterForm(props)  {
             <h3> {plants} </h3>
           </label>
 
-          <Calendar onChange={handleCalChange}/>
+          {/* <Calendar onChange={handleCalChange}/> */}
 
           <button> Offer my help</button>
       

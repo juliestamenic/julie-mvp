@@ -1,15 +1,19 @@
 import React , {useState} from 'react';
-import Calendar from "./Calendar";
+import DatePicker from "react-datepicker";
+import Calendar from './Calendar';
 
 
 function PlantSitterForm(props)  {
 
   const [name , setName] = React.useState('');
   const [location , setLocation] = React.useState('');
-  const [plants , setPlants] = useState(null);
+  const [plants , setPlants] = useState(0);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
       
 //Handle change for town and radius
   function handleChange(event) {
+    console.log('event: ', event)
     // console.log(event.target.value)
     switch (event.target.name) {
       case "name":
@@ -33,26 +37,43 @@ function PlantSitterForm(props)  {
     setPlants(plants +1)
   }
 
+//Calendar dates
+
+function handleChangeDates(date, name) {
+
+  console.log('date: ', date)
+  if (name==="startDate") 
+  {
+    console.log(`Startdate:" ${startDate}`)
+    setStartDate(date)
+  }
+  if (name==="endDate") 
+  {
+    console.log(`EndDate:" ${endDate}`)
+    setEndDate(date)
+  }
+}
+
 // Submitting the form
   function handleSubmit(event) {
       event.preventDefault();
       console.log(
       `A request has been logged: 
-      From ${name} in ${location} for ${plants} plant(s)
+      From ${name} in ${location} for ${plants} plant(s) from ${startDate} to ${endDate}
       `)
-      setLocation("");
-      setName("");
-      setPlants(null);
-      handleCalChange()
+      // setLocation("");
+      // setName("");
+      // setPlants(null);
+      // handleCalChange()
   }
 
   //Select the time frame
-    function handleCalChange(date, name) {
-      // when changed, add value in the handleSubmit
-     props.handleChangeDates(date,name)
-    }
+    // function handleCalChange(date, name) {
+    //   // when changed, add value in the handleSubmit
+    //  props.handleChangeDates(date,name)
+    // }
  
-
+  console.log('in return: ', startDate)
     return (
       <div>
         <form onSubmit={handleSubmit}> 
@@ -89,13 +110,13 @@ function PlantSitterForm(props)  {
 
          <label> Number of Plants to be sitted
             <button onClick={addPlant}> Add </button>
-            <h3> {plants} </h3>
+            {plants} 
           </label>
-
-          <Calendar 
-          name="Dates"
-          onChange={(date)=>handleCalChange(date, "Dates")} />
-
+          <Calendar
+            startDate={ startDate }
+            endDate={ endDate }
+            handleChangeDates={ handleChangeDates }
+          />
           <button> Let's find my Plant-Sitter !</button>
        </form>
       </div>
