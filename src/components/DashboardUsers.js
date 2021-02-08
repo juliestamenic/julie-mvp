@@ -9,11 +9,11 @@ function DashboardUsers(props){
                 {
                     props.owners.map((owners,i) => (
                         <div key={i}>
-                            <li> {owners.nameOwner}</li>
-                            <li>{owners.locationOwner} </li>
-                            <li>{owners.plantsOwner} </li>
-                            <li> {owners.startDateOwner} </li> 
-                            <li>{owners.endDateOwner} </li>
+                            <li> Name: {owners.nameOwner}</li>
+                            <li> Location: {owners.locationOwner} </li>
+                            <li> # of plants: {owners.plantsOwner} </li>
+                            <li> Start Date: [owners.startDateOwner] </li> 
+                            <li> End Date:[owners.endDateOwner] </li>
                         </div>
                     ))
                 }
@@ -26,8 +26,8 @@ function DashboardUsers(props){
                             <li>  {sitters.nameSitter}</li>
                             <li>{sitters.locationSitter} </li>
                             <li>Plants : {sitters.plantsSitter} </li>
-                            <li> {sitters.startDateSitter} </li> 
-                            <li>{sitters.endDateSitter} </li>
+                            <li> [sitters.startDateSitter] </li> 
+                            <li>[sitters.endDateSitter] </li>
                         </div>
                     ))
                 }

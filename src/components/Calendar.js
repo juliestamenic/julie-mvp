@@ -13,6 +13,7 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       startDate={startDate}
       endDate={endDate}
       onChange={(date)=>handleChangeDates(date, "startDate")}
+      format={"dd MMMM"}
     />
     </label>
     <label> End date
@@ -24,6 +25,7 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       endDate={endDate}
       minDate={startDate}
       onChange={(date)=>handleChangeDates(date, "endDate")}
+      format={"dd MMMM"}
     />
     </label>
   </div>

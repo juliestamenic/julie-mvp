@@ -44,12 +44,10 @@ function PlantSitterForm(props)  {
  //Calendar dates
 
 function handleChangeDates(date, name) {
-
-  console.log('date: ', date)
   if (name==="startDate") 
   {
-    console.log(`Startdate:" ${startDateSitter}`)
     setStartDateSitter(date)
+    console.log(`Startdate:" ${startDateSitter}`)
   }
   if (name==="endDate") 
   {

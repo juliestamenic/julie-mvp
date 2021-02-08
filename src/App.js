@@ -5,11 +5,11 @@ import PlantOwnerForm from "./components/PlantOwnerForm"
 import DashboardUsers from "./components/DashboardUsers"
 
 let InitialOwners = [
-  { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "1st March" , endDateOwner : "5th Match" }
+  { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: [{}] , endDateOwner : [] }
 ];
 
 let InitialSitters = [
-  { nameSitter: 'Jim R', locationSitter: "Eixample", plantsSitter: "20" , startDateSitter: "1st March" , endDateSitter : "10th Match" }
+  { nameSitter: 'Jim R', locationSitter: "Eixample", plantsSitter: "20" , startDateSitter: [] , endDateSitter : [] }
 ];
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   function handleOwnerData(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
-    //console.log(`Owner Data: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
+    console.log(`Owner Data: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
