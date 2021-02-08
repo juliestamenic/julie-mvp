@@ -3,7 +3,7 @@ import Calendar from "./Calendar";
 import BasicInfoForm from './BasicFormInfo'
 
 
-function PlantSitterForm()  {
+function PlantSitterForm(props)  {
 
   const [nameSitter , setNameSitter] = React.useState('');
   const [locationSitter , setLocationSitter] = React.useState('');
@@ -61,10 +61,12 @@ function handleChangeDates(date, name) {
 // Submitting the form
 function handleSubmit(event) {
   event.preventDefault();
-  console.log(
-  `A request has been logged: 
-  From ${nameSitter} in ${locationSitter} for ${plantsSitter} plant(s) from ${startDateSitter} to ${endDateSitter}
-  `)
+  // console.log(
+  // `A request has been logged: 
+  // From ${nameSitter} in ${locationSitter} for ${plantsSitter} plant(s) from ${startDateSitter} to ${endDateSitter}
+  // `)
+  let sitterData = {nameSitter:nameSitter, locationSitter:locationSitter, plantsSitter:plantsSitter, startDateSitter:startDateSitter, endDateSitter:endDateSitter}
+  props.parentCB(sitterData)
   setLocationSitter("");
   setNameSitter("");
   setPlantsSitter(0);

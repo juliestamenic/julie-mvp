@@ -3,7 +3,7 @@ import Calendar from './Calendar';
 import BasicInfoForm from './BasicFormInfo'
 
 
-function PlantOwnerForm()  {
+function PlantOwnerForm(props)  {
 
   const [nameOwner , setNameOwner] = React.useState('');
   const [locationOwner , setLocationOwner] = React.useState('');
@@ -58,10 +58,12 @@ function handleChangeDates(date, name) {
 // Submitting the form
   function handleSubmit(event) {
       event.preventDefault();
-      console.log(
-      `A request has been logged: 
-      From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
-      `)
+      // console.log(
+      // `A request has been logged: 
+      // From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
+      // `);
+      let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
+      props.parentCallBack(ownerData)
       setLocationOwner("");
       setNameOwner("");
       setPlantsOwner(0);
