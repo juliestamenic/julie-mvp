@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './App.css';
 import PlantSitterForm from "./components/PlantSitterForm";
 import PlantOwnerForm from "./components/PlantOwnerForm"
+import DashboardUsers from "./components/DashboardUsers"
 
 let InitialOwners = [
   { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "1st March" , endDateOwner : "5th Match" }
@@ -24,18 +25,15 @@ function App() {
 
   // to get the data from PO form
   function handleOwnerData(ownerData) {
-    let newOwner = {ownerData}
-    let newOwners = [...owners, newOwner];
-    console.log(newOwners)
-    setOwners(owners => newOwners)
+    let newOwners = [...owners, ownerData];
+    setOwners(newOwners)
     //console.log(`Owner Data: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
   function handleSitterData (sitterData) {
-    let newSitter = {sitterData}
-    let newSitters = [...sitters, newSitter];
-    console.log(newSitters)
+    let newSitters = [...sitters, sitterData];
+    setSitters(newSitters)
     // console.log(`Sitter Data: ${sitterData.locationSitter} ${sitterData.nameSitter} ${sitterData.plantsSitter} ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
   }
 
@@ -57,6 +55,7 @@ function App() {
           {!plantSitterView && <PlantOwnerForm 
           parentCallBack={handleOwnerData} /> 
           }
+          <DashboardUsers owners={owners} sitters={sitters} />
          
     </div>
   );
