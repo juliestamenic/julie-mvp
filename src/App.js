@@ -29,8 +29,7 @@ function App() {
   function handleOwnerData(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
-    console.log(`Owner Data from APP component: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
-    console.log(`${ownerData.startDateOwner}`)
+    console.log(`Owner Data from APP component: ${typeof(ownerData.locationOwner)}${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
@@ -39,8 +38,6 @@ function App() {
     setSitters(newSitters)
     console.log(`Sitter Data from APP component: ${sitterData.locationSitter} ${sitterData.nameSitter} ${sitterData.plantsSitter} ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
   }
-
-  // function to compare both
 
 
   // based in the comparison add what is true in an Array, return this array in a component
@@ -58,7 +55,11 @@ function App() {
           {!plantSitterView && <PlantOwnerForm 
           parentCallBack={handleOwnerData} /> 
           }
-          <DashboardUsers owners={owners} sitters={sitters} />
+          <DashboardUsers 
+          owners={owners} 
+          sitters={sitters} 
+          />
+          
     </div>
   );
 }

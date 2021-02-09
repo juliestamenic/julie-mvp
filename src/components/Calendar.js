@@ -6,7 +6,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Calendar = ({ startDate, endDate, handleChangeDates }) => (
 
-
   <div>
     <label> Beginning date
     <DatePicker 

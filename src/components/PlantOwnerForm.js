@@ -47,7 +47,8 @@ function PlantOwnerForm(props)  {
 function handleChangeDates(date, name) {
   if (name==="startDate") 
   {
-    setStartDateOwner(date)
+    setStartDateOwner(startDateOwner)
+    console.log(date)
   }
   if (name==="endDate") 
   {
@@ -62,9 +63,11 @@ function handleChangeDates(date, name) {
       // `A request has been logged: 
       // From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
       // `);
-      console.log(startDateOwner)
+      //defines an object with data
       let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
+      // sends it back to parent (App)
       props.parentCallBack(ownerData)
+      //Reset fields
       setLocationOwner("");
       setNameOwner("");
       setPlantsOwner(0);
