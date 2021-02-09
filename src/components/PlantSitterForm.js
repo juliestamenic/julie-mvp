@@ -76,7 +76,7 @@ function handleSubmit(event) {
 
     return (
       <div>
-        <form onSubmit={handleSubmit}> 
+        {/* <form onSubmit={handleSubmit}> 
           <BasicInfoForm
             name={nameSitter}
             handleChange = {handleChange}
@@ -84,16 +84,16 @@ function handleSubmit(event) {
             addPlant = {addPlant}
             removePlant={removePlant}
             plants={plantsSitter}
-          />
-          <Calendar
+          /> */}
+          {/* <Calendar
             startDate={ startDateSitter }
             endDate={ endDateSitter }
             handleChangeDates={ handleChangeDates }
-          />
+          /> */}
 
           <button> Offer my help</button>
       
-       </form>
+       {/* </form> */}
       </div>
     )
 }

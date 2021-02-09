@@ -8,6 +8,8 @@ const BasicInfoForm = ({name, handleChange, location , addPlant, plants, removeP
             type="text"
             value={name}
             onChange={handleChange}
+            required
+            
             >
             </input>
           </label>

@@ -47,8 +47,7 @@ function PlantOwnerForm(props)  {
 function handleChangeDates(date, name) {
   if (name==="startDate") 
   {
-    setStartDateOwner(startDateOwner)
-    console.log(date)
+    setStartDateOwner(date)
   }
   if (name==="endDate") 
   {

@@ -18,6 +18,7 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       dateFormat="dd/MM/yyyy"
       minDate={new Date()}
       placeholderText="Select Start Date"
+      autoComplete="off"
     />
     </label>
     <label> End date
@@ -31,6 +32,7 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       onChange={(date)=>handleChangeDates(date, "endDate")}
       dateFormat="dd/MM/yyyy" 
       placeholderText="Select End Date"
+      autoComplete="off"
     />
     </label>
   </div>

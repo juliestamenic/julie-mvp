@@ -3,12 +3,13 @@ import React  from "react";
 function DashboardUsers(props){
 
      // function to compare both
-  function findSitter (owners , sitters) {
-    console.log(owners.nameOwner)
-    // if(ownerData.locationOwner === sitterData.locationSitter)
-    // {console.log("Location is the same")}
-    // console.log(sitters)
-  }
+//   function findSitter (owner , sitters) {
+    
+//     if(owner.filter() === sitters.locationSitter)
+//     {console.log("Location is the same")}
+//     // console.log(sitters)
+//   }
+
 
 
     return ( 
@@ -17,13 +18,13 @@ function DashboardUsers(props){
             <h4> Here are the current owners </h4>
             <ul>
                 {
-                    props.owners.map((owners,i) => (
-                        <div key={i}>
+                    props.owners.map((owners) => (
+                        <div >
                             <li> Name: {owners.nameOwner}</li>
                             <li> Location: {owners.locationOwner} </li>
                             <li> # of plants: {owners.plantsOwner} </li>
-                            <li> Start Date: {owners.startDateOwner.toString()} </li>
-                            <li> End Date:{owners.endDateOwner.toString()} </li>
+                            <li> Start Date: {owners.startDateOwner} </li>
+                            <li> End Date:{owners.endDateOwner} </li>
                         </div>
                     ))
                 }
@@ -42,7 +43,7 @@ function DashboardUsers(props){
                     ))
                 }
             </ul>
-            <button onClick={findSitter}>Find Sitter</button>
+            {/* <button onClick={findSitter}>Find Sitter</button> */}
         </div>
     )
 }

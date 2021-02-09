@@ -5,19 +5,21 @@ import PlantOwnerForm from "./components/PlantOwnerForm"
 import DashboardUsers from "./components/DashboardUsers"
 
 
-// let InitialOwners = [
+// let InitialUser = [
 //   { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "" , endDateOwner : "" }
 // ];
 
-// let InitialSitters = [
-//   { nameSitter: 'Jim R', locationSitter: "Eixample", plantsSitter: "20" , startDateSitter: "" , endDateSitter : "" }
-// ];
+let InitialOwners = [
+  { nameOwner: 'Jim', locationOwner: "Barcelona", plantOwner: "2" , startDateOwner: "01/03/2021" , endDateOwner : "08/03/2021" },
+  { nameOwner: 'Robert', locationOwner: "Barcelona", plantOwner: "4" , startDateOwner: "11/03/2021" , endDateOwner : "28/03/2021" }
+];
 
 function App() {
 
   const [plantSitterView, setPlantSitterView] = useState(true)
-  const [owners, setOwners] = useState([]);
+  const [owners, setOwners] = useState(InitialOwners);
   const [sitters, setSitters] = useState([]);
+  // const [user , setUser] = useState(InitialUser)
 
 
   // to change between PS and PO
