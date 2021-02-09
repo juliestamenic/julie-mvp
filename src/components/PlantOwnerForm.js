@@ -62,6 +62,7 @@ function handleChangeDates(date, name) {
       // `A request has been logged: 
       // From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
       // `);
+      console.log(startDateOwner)
       let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
       props.parentCallBack(ownerData)
       setLocationOwner("");
@@ -85,8 +86,8 @@ function handleChangeDates(date, name) {
           />
          
           <Calendar
-            startDate={ startDateOwner }
-            endDate={ endDateOwner }
+            startDate={startDateOwner}
+            endDate={endDateOwner}
             handleChangeDates={ handleChangeDates }
           />
           <button> Let's find my Plant-Sitter !</button>

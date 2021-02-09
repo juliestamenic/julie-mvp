@@ -4,19 +4,21 @@ import PlantSitterForm from "./components/PlantSitterForm";
 import PlantOwnerForm from "./components/PlantOwnerForm"
 import DashboardUsers from "./components/DashboardUsers"
 
-let InitialOwners = [
-  { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: [{}] , endDateOwner : [] }
-];
 
-let InitialSitters = [
-  { nameSitter: 'Jim R', locationSitter: "Eixample", plantsSitter: "20" , startDateSitter: [] , endDateSitter : [] }
-];
+// let InitialOwners = [
+//   { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "" , endDateOwner : "" }
+// ];
+
+// let InitialSitters = [
+//   { nameSitter: 'Jim R', locationSitter: "Eixample", plantsSitter: "20" , startDateSitter: "" , endDateSitter : "" }
+// ];
 
 function App() {
 
   const [plantSitterView, setPlantSitterView] = useState(true)
-  const [owners, setOwners] = useState(InitialOwners);
-  const [sitters, setSitters] = useState(InitialSitters);
+  const [owners, setOwners] = useState([]);
+  const [sitters, setSitters] = useState([]);
+
 
   // to change between PS and PO
   const handleChangeView = (isPlantSitter) => {
@@ -27,14 +29,15 @@ function App() {
   function handleOwnerData(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
-    console.log(`Owner Data: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
+    console.log(`Owner Data from APP component: ${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
+    console.log(`${ownerData.startDateOwner}`)
     }
 
   // to get data from PS form
   function handleSitterData (sitterData) {
     let newSitters = [...sitters, sitterData];
     setSitters(newSitters)
-    // console.log(`Sitter Data: ${sitterData.locationSitter} ${sitterData.nameSitter} ${sitterData.plantsSitter} ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
+    console.log(`Sitter Data from APP component: ${sitterData.locationSitter} ${sitterData.nameSitter} ${sitterData.plantsSitter} ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
   }
 
   // function to compare both
@@ -56,7 +59,6 @@ function App() {
           parentCallBack={handleOwnerData} /> 
           }
           <DashboardUsers owners={owners} sitters={sitters} />
-         
     </div>
   );
 }

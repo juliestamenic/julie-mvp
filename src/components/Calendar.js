@@ -3,7 +3,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
+
 const Calendar = ({ startDate, endDate, handleChangeDates }) => (
+
+
   <div>
     <label> Beginning date
     <DatePicker 
@@ -13,7 +16,9 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       startDate={startDate}
       endDate={endDate}
       onChange={(date)=>handleChangeDates(date, "startDate")}
-      format={"dd MMMM"}
+      dateFormat="dd/MM/yyyy"
+      minDate={new Date()}
+      placeholderText="Select Start Date"
     />
     </label>
     <label> End date
@@ -25,7 +30,8 @@ const Calendar = ({ startDate, endDate, handleChangeDates }) => (
       endDate={endDate}
       minDate={startDate}
       onChange={(date)=>handleChangeDates(date, "endDate")}
-      format={"dd MMMM"}
+      dateFormat="dd/MM/yyyy" 
+      placeholderText="Select End Date"
     />
     </label>
   </div>

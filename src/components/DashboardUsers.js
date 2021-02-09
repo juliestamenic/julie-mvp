@@ -12,8 +12,8 @@ function DashboardUsers(props){
                             <li> Name: {owners.nameOwner}</li>
                             <li> Location: {owners.locationOwner} </li>
                             <li> # of plants: {owners.plantsOwner} </li>
-                            <li> Start Date: [owners.startDateOwner] </li> 
-                            <li> End Date:[owners.endDateOwner] </li>
+                            <li> Start Date: {owners.startDateOwner} </li> 
+                            <li> End Date:{owners.endDateOwner} </li>
                         </div>
                     ))
                 }
@@ -26,8 +26,8 @@ function DashboardUsers(props){
                             <li>  {sitters.nameSitter}</li>
                             <li>{sitters.locationSitter} </li>
                             <li>Plants : {sitters.plantsSitter} </li>
-                            <li> [sitters.startDateSitter] </li> 
-                            <li>[sitters.endDateSitter] </li>
+                            <li> Start Date: {sitters.startDateSitter} </li> 
+                            <li> End Date: {sitters.endDateSitter} </li>
                         </div>
                     ))
                 }

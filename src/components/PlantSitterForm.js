@@ -3,6 +3,7 @@ import Calendar from "./Calendar";
 import BasicInfoForm from './BasicFormInfo'
 
 
+
 function PlantSitterForm(props)  {
 
   const [nameSitter , setNameSitter] = React.useState('');
@@ -59,7 +60,7 @@ function handleChangeDates(date, name) {
 // Submitting the form
 function handleSubmit(event) {
   event.preventDefault();
-  // console.log(
+  // //console.log(
   // `A request has been logged: 
   // From ${nameSitter} in ${locationSitter} for ${plantsSitter} plant(s) from ${startDateSitter} to ${endDateSitter}
   // `)
