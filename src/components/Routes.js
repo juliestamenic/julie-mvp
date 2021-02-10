@@ -18,17 +18,17 @@ function Routes(props) {
             </Route>
     
             {/* Plant Sitter */}
-            <Route path="/plant-sitter">
-                <PlantSitterForm onSearch={props.addSitter}/>
+            <Route exact path="/plant-sitter"
+            render = {() => <PlantSitterForm addSitter={props.addSitter()}/>}>
             </Route>
 
             <Route path="/plant-sitting-requests">
-                <PlantSittingRequests owners={props.owners}/>
+                <PlantSittingRequests owners={props.owners}  />
             </Route>
     
             {/* Plant Owner */}
             <Route path="/plant-owner" exact>
-                <PlantOwnerForm  onRequest={props.addOwner}/>
+                <PlantOwnerForm  onAddOwner={props.addOwner}/>
             </Route>
 
             <Route path="/plant-sitting-offers">
@@ -43,6 +43,8 @@ function Routes(props) {
         </Switch>
     );
 }
+//component={PlantSitterForm} 
+// onAddSitter={props.addSitter}
 
 
 export default Routes;

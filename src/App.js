@@ -33,14 +33,14 @@ function App() {
   function addOwner(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
-    console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
+    //console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
   function addSitter(sitterData) {
+    console.log(sitterData, "In App JS OK ")
     let newSitters = [...sitters, sitterData];
-    console.log(newSitters)
-    // setSitters(newSitters)
+    setSitters(newSitters)
     // let newSitter = {nameSitter: sitterData.nameSitter, locationSitter: sitterData.locationSitter}
     // setSitters(sitters => [...sitters, newSitter])
     history.push('/plant-sitting-offers');
@@ -56,10 +56,11 @@ function App() {
     <div>
   
           <Navbar />
-          <Routes sitters={sitters} onSearch={(sitterData) => addSitter(sitterData)} owners={owners} onRequest={addOwner} />
+          <Routes sitters={sitters} addSitter={()=> addSitter} owners={owners} onAddOwner={addOwner} />
          
     </div>
   );
 }
 
 export default App;
+

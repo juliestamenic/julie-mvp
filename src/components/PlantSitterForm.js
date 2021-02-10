@@ -6,12 +6,12 @@ import { useHistory } from 'react-router-dom';
 
 function PlantSitterForm(props)  {
 
-  const [nameSitter , setNameSitter] = React.useState('');
-  const [locationSitter , setLocationSitter] = React.useState('');
+  const [nameSitterValue , setNameSitterValue] = React.useState('');
+  const [locationSitterValue , setLocationSitterValue] = React.useState('');
   // const [plantsSitter , setPlantsSitter] = useState(0);
-  const [phoneSitter , setPhonesitter] = React.useState('');
-  const [startDateSitter, setStartDateSitter] = useState('');
-  const [endDateSitter, setEndDateSitter] = useState('');
+  const [phoneSitterValue , setPhonesitterValue] = React.useState('');
+  const [startDateSitterValue, setStartDateSitterValue] = useState('');
+  const [endDateSitterValue, setEndDateSitterValue] = useState('');
   const history = useHistory();
 
 
@@ -20,13 +20,13 @@ function PlantSitterForm(props)  {
     // console.log(event.target.value)
     switch (event.target.name) {
       case "name":
-        setNameSitter(event.target.value);
+        setNameSitterValue(event.target.value);
         break;
       case "location":
-        setLocationSitter(event.target.value);
+        setLocationSitterValue(event.target.value);
         break;
       case "phone":
-        setPhonesitter(event.target.value);
+        setPhonesitterValue(event.target.value);
       break;
       default:
         break;
@@ -49,13 +49,13 @@ function PlantSitterForm(props)  {
 function handleChangeDates(date, name) {
   if (name==="startDate") 
   {
-    setStartDateSitter(date)
-    console.log(`Startdate:" ${startDateSitter}`)
+    setStartDateSitterValue(date)
+    console.log(`Startdate:" ${startDateSitterValue}`)
   }
   if (name==="endDate") 
   {
-    console.log(`EndDate:" ${endDateSitter}`)
-    setEndDateSitter(date)
+    console.log(`EndDate:" ${endDateSitterValue}`)
+    setEndDateSitterValue(date)
   }
 }
 
@@ -66,9 +66,10 @@ function handleSubmit(event) {
   // `A request has been logged: 
   // From ${nameSitter} in ${locationSitter} with phone ${phoneSitter} unavailable from ${startDateSitter} to ${endDateSitter}
   // `)
-  let sitterData = {nameSitter, locationSitter, phoneSitter, startDateSitter, endDateSitter}
- console.log(sitterData)
-  // props.onSearch(sitterData)
+  let sitterData = {nameSitter:nameSitterValue, locationSitter:locationSitterValue, phoneSitter:phoneSitterValue, startDateSitter:startDateSitterValue, endDateSitter:endDateSitterValue}
+  //props.sitters=[...props.sitters, sitterData];
+  props.addSitter(sitterData)
+  console.log(props.addSitter, sitterData);
   // setLocationSitter("");
   // setNameSitter("");
   // setPhonesitter("")
@@ -80,17 +81,17 @@ function handleSubmit(event) {
       <div>
         <form onSubmit={handleSubmit}> 
           <BasicInfoForm
-            name={nameSitter}
+            name={nameSitterValue}
             handleChange = {handleChange}
-            location = {locationSitter}
-            phone = {phoneSitter}
+            location = {locationSitterValue}
+            phone = {phoneSitterValue}
           />
           <CalendarSitter
-            startDate={ startDateSitter }
-            endDate={ endDateSitter }
+            startDate={ startDateSitterValue }
+            endDate={ endDateSitterValue }
             handleChangeDates={ handleChangeDates }
           />
-          <button onClick={handleSubmit}> Save My Profile</button>
+          <button type="submit" > Save My Profile</button>
        
        </form>
        <button onClick={(e) => history.push('/plant-sitting-requests')}>See current Offers</button>

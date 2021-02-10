@@ -71,7 +71,7 @@ function handleChangeDates(date, name) {
       //defines an object with data
       let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, phoneOwner:phoneOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
       // sends it back to parent (App)
-      props.onRequest(ownerData)
+      props.onAddOwner(ownerData)
       //Reset fields
       setLocationOwner("");
       setNameOwner("");
