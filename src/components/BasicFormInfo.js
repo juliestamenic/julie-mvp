@@ -17,7 +17,8 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
            <select 
            name="location" 
            value={location} 
-           onChange={handleChange}>
+           onChange={handleChange}
+           required>
            <option id="empty" ></option>
             <option id="Barcelona" >Barcelona</option>
             <option id="Paris" >Paris</option>

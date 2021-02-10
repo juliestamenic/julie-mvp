@@ -7,19 +7,19 @@ function PlantSittingRequests(props){
            
             <h4> Requests Pending </h4>
             <h5> Click on their name to get in touch with them</h5>
-            {/* <ul>
+            <ul>
                 {
-                    props.sitters.map((sitters, j) => (
+                    props.owners.map((owners, j) => (
                         <div key={j}>
-                            <li>  {sitters.nameSitter}</li>
-                            <li>{sitters.locationSitter} </li>
-                            <li>Plants : {sitters.plantsSitter} </li>
+                            <li> {owners.nameOwner}</li>
+                            <li>{owners.locationOwner} </li>
+                            {/* <li>Plants : {sitters.plantsSitter} </li>
                             <li> Start Date: {sitters.startDateSitter.toString()} </li>
-                            <li> End Date: {sitters.endDateSitter.toString()} </li>
+                            <li> End Date: {sitters.endDateSitter.toString()} </li> */}
                         </div>
                     ))
                 }
-            </ul> */}
+            </ul>
         </div>
     )
 }

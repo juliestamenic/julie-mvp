@@ -22,9 +22,6 @@ function PlantSitterForm(props)  {
       case "name":
         setNameSitter(event.target.value);
         break;
-      // case "plants":
-      //   setPlantsSitter(event.target.value);
-      //   break;
       case "location":
         setLocationSitter(event.target.value);
         break;
@@ -65,18 +62,18 @@ function handleChangeDates(date, name) {
 // Submitting the form
 function handleSubmit(event) {
   event.preventDefault();
-  console.log(
-  `A request has been logged: 
-  From ${nameSitter} in ${locationSitter} with phone ${phoneSitter} unavailable from ${startDateSitter} to ${endDateSitter}
-  `)
-  let sitterData = {nameSitter:nameSitter, locationSitter:locationSitter, startDateSitter:startDateSitter, endDateSitter:endDateSitter}
-  props.parentCB(sitterData)
-  setLocationSitter("");
-  setNameSitter("");
-  // setPlantsSitter(0);
-  setPhonesitter("")
-  setStartDateSitter("");
-  setEndDateSitter("")
+  // console.log(
+  // `A request has been logged: 
+  // From ${nameSitter} in ${locationSitter} with phone ${phoneSitter} unavailable from ${startDateSitter} to ${endDateSitter}
+  // `)
+  let sitterData = {nameSitter, locationSitter, phoneSitter, startDateSitter, endDateSitter}
+ console.log(sitterData)
+  // props.onSearch(sitterData)
+  // setLocationSitter("");
+  // setNameSitter("");
+  // setPhonesitter("")
+  // setStartDateSitter("");
+  // setEndDateSitter("")
 }
 
     return (
@@ -93,7 +90,7 @@ function handleSubmit(event) {
             endDate={ endDateSitter }
             handleChangeDates={ handleChangeDates }
           />
-          <button> Save My Profile</button>
+          <button onClick={handleSubmit}> Save My Profile</button>
        
        </form>
        <button onClick={(e) => history.push('/plant-sitting-requests')}>See current Offers</button>

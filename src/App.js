@@ -5,22 +5,23 @@ import './App.css';
 // import DashboardUsers from "./components/DashboardUsers"
 import Navbar from "./components/Navbar"
 import Routes from "./components/Routes"
+import { useHistory } from 'react-router-dom';
 
-// let InitialUser = [
-//   { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "" , endDateOwner : "" }
-// ];
+let InitialSitters = [
+  { nameSitter: 'Julie S', locationSitter: "Barcelona", phoneSitter: "12345" , startDateSitter: "" , endDateSitter : "" }
+];
 
 let InitialOwners = [
-  { nameOwner: 'Jim', locationOwner: "Barcelona", plantsOwner: "2" , startDateOwner: "01/03/2021" , endDateOwner : "08/03/2021" },
-  { nameOwner: 'Robert', locationOwner: "Barcelona", plantsOwner: "4" , startDateOwner: "11/03/2021" , endDateOwner : "28/03/2021" }
+  { nameOwner: 'Jim', locationOwner: "Barcelona", plantsOwner: "2" , startDateOwner: "01/03/2021" , endDateOwner : "08/03/2021" }
 ];
 
 function App() {
 
   // const [plantSitterView, setPlantSitterView] = useState(true)
   const [owners, setOwners] = useState(InitialOwners);
-  const [sitters, setSitters] = useState([]);
+  const [sitters, setSitters] = useState(InitialSitters);
   // const [user , setUser] = useState(InitialUser)
+  const history = useHistory();
 
 
   // to change between PS and PO
@@ -29,17 +30,21 @@ function App() {
   //   }
 
   // to get the data from PO form
-  function handleOwnerData(ownerData) {
+  function addOwner(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
     console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
-  function handleSitterData (sitterData) {
+  function addSitter(sitterData) {
     let newSitters = [...sitters, sitterData];
-    setSitters(newSitters)
-    console.log(`Sitter Data from APP component: ${sitterData.locationSitter} ${sitterData.nameSitter} ${sitterData.plantsSitter} ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
+    console.log(newSitters)
+    // setSitters(newSitters)
+    // let newSitter = {nameSitter: sitterData.nameSitter, locationSitter: sitterData.locationSitter}
+    // setSitters(sitters => [...sitters, newSitter])
+    history.push('/plant-sitting-offers');
+    //console.log(`Sitter Data from APP component: ${sitterData.locationSitter} ${sitterData.nameSitter}  ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
   }
 
 
@@ -49,23 +54,10 @@ function App() {
 
   return (
     <div>
-          {/* 
-          <button className ={plantSitterView ? 'button-active' : "button"} onClick={() => handleChangeView(true)}> I am a Plant Sitter</button>
-          <button className ={!plantSitterView ? 'button-active' : "button"} onClick={() => handleChangeView(false)}>I am a Plant Owner</button>
-          {plantSitterView && <PlantSitterForm 
-          handleChangeView={handleChangeView}
-          parentCB={handleSitterData} />}
-          {!plantSitterView && <PlantOwnerForm 
-          parentCallBack={handleOwnerData} /> 
-          }
-          <DashboardUsers 
-          owners={owners} 
-          sitters={sitters} 
-          /> */}
+  
           <Navbar />
-          <Routes  />
-          {/* owners={owners} sitters={sitters} parentCallBack={handleOwnerData} parentCB={handleSitterData} */}
-          
+          <Routes sitters={sitters} onSearch={(sitterData) => addSitter(sitterData)} owners={owners} onRequest={addOwner} />
+         
     </div>
   );
 }

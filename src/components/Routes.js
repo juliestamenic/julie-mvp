@@ -19,20 +19,20 @@ function Routes(props) {
     
             {/* Plant Sitter */}
             <Route path="/plant-sitter">
-                <PlantSitterForm />
+                <PlantSitterForm onSearch={props.addSitter}/>
             </Route>
 
             <Route path="/plant-sitting-requests">
-                <PlantSittingRequests />
+                <PlantSittingRequests owners={props.owners}/>
             </Route>
     
             {/* Plant Owner */}
             <Route path="/plant-owner" exact>
-                <PlantOwnerForm  />
+                <PlantOwnerForm  onRequest={props.addOwner}/>
             </Route>
 
             <Route path="/plant-sitting-offers">
-                <PlantSittingOffers />
+                <PlantSittingOffers sitters={props.sitters}/>
             </Route>
 
             {/* Dashboard Users */}
