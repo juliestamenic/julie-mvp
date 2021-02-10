@@ -1,15 +1,14 @@
 import React from 'react';
 
-const BasicInfoForm = ({name, handleChange, location , addPlant, plants, removePlant }) => (
+const BasicInfoForm = ({name, handleChange, location , phone }) => (
     <div>
-    <label> Name
+            <label> Name
             <input
             name="name"
             type="text"
             value={name}
             onChange={handleChange}
             required
-            
             >
             </input>
           </label>
@@ -20,25 +19,23 @@ const BasicInfoForm = ({name, handleChange, location , addPlant, plants, removeP
            value={location} 
            onChange={handleChange}>
            <option id="empty" ></option>
-            <option id="ciutat vella" >Ciutat Vella</option>
-            <option id="Eixample" >Eixample</option>
-            <option id="Gràcia" >Gràcia</option>
-            <option id="HG" >Horta-Guinardó</option>
-            <option id="LC" >Les Corts</option>
-            <option id="NB" >Nou Barris</option>
-            <option id="SA" >Sant Andreu</option>
-            <option id="SMa" >Sant Martí</option>
-            <option id="SMon" >Sants Montjuic</option>
-            <option id="SSG" >Sarrià Sant Gervasi</option>
+            <option id="Barcelona" >Barcelona</option>
+            <option id="Paris" >Paris</option>
+            <option id="London" >London</option>
           </select>
           </label>
 
-
-         <label> Number of Plants to be sitted
-            <button onClick={addPlant}> + </button>
-            <button onClick={removePlant}> - </button>
-            {plants} 
+          <label> Phone Number
+            <input
+            name="phone"
+            type="text"
+            value={phone}
+            onChange={handleChange}
+            required
+            >
+            </input>
           </label>
+
           </div>
   );
   

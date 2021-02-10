@@ -1,16 +1,18 @@
 import React , {useState} from 'react';
-import Calendar from "./Calendar";
+import CalendarSitter from "./CalendarSitter";
 import BasicInfoForm from './BasicFormInfo'
-
+import { useHistory } from 'react-router-dom';
 
 
 function PlantSitterForm(props)  {
 
   const [nameSitter , setNameSitter] = React.useState('');
   const [locationSitter , setLocationSitter] = React.useState('');
-  const [plantsSitter , setPlantsSitter] = useState(0);
+  // const [plantsSitter , setPlantsSitter] = useState(0);
+  const [phoneSitter , setPhonesitter] = React.useState('');
   const [startDateSitter, setStartDateSitter] = useState('');
   const [endDateSitter, setEndDateSitter] = useState('');
+  const history = useHistory();
 
 
 //Handle change for name and location
@@ -20,27 +22,30 @@ function PlantSitterForm(props)  {
       case "name":
         setNameSitter(event.target.value);
         break;
-      case "plants":
-        setPlantsSitter(event.target.value);
-        break;
+      // case "plants":
+      //   setPlantsSitter(event.target.value);
+      //   break;
       case "location":
         setLocationSitter(event.target.value);
         break;
+      case "phone":
+        setPhonesitter(event.target.value);
+      break;
       default:
         break;
     }
  }
 
  //Plant counter
-  const addPlant = (event) => {
-    event.preventDefault()
-    setPlantsSitter(plantsSitter +1)
-  }
+  // const addPlant = (event) => {
+  //   event.preventDefault()
+  //   setPlantsSitter(plantsSitter +1)
+  // }
 
-  const removePlant = (event) => {
-    event.preventDefault()
-    setPlantsSitter(plantsSitter -1)
-  }
+  // const removePlant = (event) => {
+  //   event.preventDefault()
+  //   setPlantsSitter(plantsSitter -1)
+  // }
 
  //Calendar dates
 
@@ -60,40 +65,38 @@ function handleChangeDates(date, name) {
 // Submitting the form
 function handleSubmit(event) {
   event.preventDefault();
-  // //console.log(
-  // `A request has been logged: 
-  // From ${nameSitter} in ${locationSitter} for ${plantsSitter} plant(s) from ${startDateSitter} to ${endDateSitter}
-  // `)
-  let sitterData = {nameSitter:nameSitter, locationSitter:locationSitter, plantsSitter:plantsSitter, startDateSitter:startDateSitter, endDateSitter:endDateSitter}
+  console.log(
+  `A request has been logged: 
+  From ${nameSitter} in ${locationSitter} with phone ${phoneSitter} unavailable from ${startDateSitter} to ${endDateSitter}
+  `)
+  let sitterData = {nameSitter:nameSitter, locationSitter:locationSitter, startDateSitter:startDateSitter, endDateSitter:endDateSitter}
   props.parentCB(sitterData)
   setLocationSitter("");
   setNameSitter("");
-  setPlantsSitter(0);
+  // setPlantsSitter(0);
+  setPhonesitter("")
   setStartDateSitter("");
   setEndDateSitter("")
 }
 
-
     return (
       <div>
-        {/* <form onSubmit={handleSubmit}> 
+        <form onSubmit={handleSubmit}> 
           <BasicInfoForm
             name={nameSitter}
             handleChange = {handleChange}
             location = {locationSitter}
-            addPlant = {addPlant}
-            removePlant={removePlant}
-            plants={plantsSitter}
-          /> */}
-          {/* <Calendar
+            phone = {phoneSitter}
+          />
+          <CalendarSitter
             startDate={ startDateSitter }
             endDate={ endDateSitter }
             handleChangeDates={ handleChangeDates }
-          /> */}
-
-          <button> Offer my help</button>
-      
-       {/* </form> */}
+          />
+          <button> Save My Profile</button>
+       
+       </form>
+       <button onClick={(e) => history.push('/plant-sitting-requests')}>See current Offers</button>
       </div>
     )
 }

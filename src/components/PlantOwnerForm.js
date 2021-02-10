@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import Calendar from './Calendar';
 import BasicInfoForm from './BasicFormInfo'
+import { useHistory } from 'react-router-dom';
 
 
 function PlantOwnerForm(props)  {
@@ -8,8 +9,10 @@ function PlantOwnerForm(props)  {
   const [nameOwner , setNameOwner] = React.useState('');
   const [locationOwner , setLocationOwner] = React.useState('');
   const [plantsOwner , setPlantsOwner] = useState(0);
+  const [phoneOwner , setPhoneOwner] = React.useState('');
   const [startDateOwner, setStartDateOwner] = useState('');
   const [endDateOwner, setEndDateOwner] = useState('');
+  const history = useHistory();
       
 //Handle change for town and radius
   function handleChange(event) {
@@ -24,6 +27,9 @@ function PlantOwnerForm(props)  {
         break;
       case "location":
         setLocationOwner(event.target.value);
+        break;
+      case "phone":
+        setPhoneOwner(event.target.value);
         break;
       default:
         break;
@@ -63,7 +69,7 @@ function handleChangeDates(date, name) {
       // From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
       // `);
       //defines an object with data
-      let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
+      let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, phoneOwner:phoneOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
       // sends it back to parent (App)
       props.parentCallBack(ownerData)
       //Reset fields
@@ -72,6 +78,7 @@ function handleChangeDates(date, name) {
       setPlantsOwner(0);
       setStartDateOwner("");
       setEndDateOwner("");
+      setPhoneOwner("");
   }
 
  
@@ -82,17 +89,21 @@ function handleChangeDates(date, name) {
             name={nameOwner}
             handleChange = {handleChange}
             location = {locationOwner}
-            addPlant = {addPlant}
-            removePlant = {removePlant}
-            plants={plantsOwner}
+            phone={phoneOwner}
           />
+
+          <label> Number of Plants to be sitted
+            <button onClick={addPlant}> + </button>
+            <button onClick={removePlant}> - </button>
+            {plantsOwner}
+          </label>
          
           <Calendar
             startDate={startDateOwner}
             endDate={endDateOwner}
             handleChangeDates={ handleChangeDates }
           />
-          <button> Let's find my Plant-Sitter !</button>
+          <button onClick={(e) => history.push('/plant-sitting-offers')}> Find a Plant-Sitter</button>
        </form>
       </div>
     )

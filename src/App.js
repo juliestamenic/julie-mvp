@@ -1,37 +1,38 @@
 import React, { useState } from "react";
 import './App.css';
-import PlantSitterForm from "./components/PlantSitterForm";
-import PlantOwnerForm from "./components/PlantOwnerForm"
-import DashboardUsers from "./components/DashboardUsers"
-
+// import PlantSitterForm from "./components/PlantSitterForm";
+// import PlantOwnerForm from "./components/PlantOwnerForm"
+// import DashboardUsers from "./components/DashboardUsers"
+import Navbar from "./components/Navbar"
+import Routes from "./components/Routes"
 
 // let InitialUser = [
 //   { nameOwner: 'Julie S', locationOwner: "Eixample", plantsOwner: "2" , startDateOwner: "" , endDateOwner : "" }
 // ];
 
 let InitialOwners = [
-  { nameOwner: 'Jim', locationOwner: "Barcelona", plantOwner: "2" , startDateOwner: "01/03/2021" , endDateOwner : "08/03/2021" },
-  { nameOwner: 'Robert', locationOwner: "Barcelona", plantOwner: "4" , startDateOwner: "11/03/2021" , endDateOwner : "28/03/2021" }
+  { nameOwner: 'Jim', locationOwner: "Barcelona", plantsOwner: "2" , startDateOwner: "01/03/2021" , endDateOwner : "08/03/2021" },
+  { nameOwner: 'Robert', locationOwner: "Barcelona", plantsOwner: "4" , startDateOwner: "11/03/2021" , endDateOwner : "28/03/2021" }
 ];
 
 function App() {
 
-  const [plantSitterView, setPlantSitterView] = useState(true)
+  // const [plantSitterView, setPlantSitterView] = useState(true)
   const [owners, setOwners] = useState(InitialOwners);
   const [sitters, setSitters] = useState([]);
   // const [user , setUser] = useState(InitialUser)
 
 
   // to change between PS and PO
-  const handleChangeView = (isPlantSitter) => {
-    setPlantSitterView(isPlantSitter)
-    }
+  // const handleChangeView = (isPlantSitter) => {
+  //   setPlantSitterView(isPlantSitter)
+  //   }
 
   // to get the data from PO form
   function handleOwnerData(ownerData) {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
-    console.log(`Owner Data from APP component: ${typeof(ownerData.locationOwner)}${ownerData.locationOwner} ${ownerData.nameOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
+    console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
     }
 
   // to get data from PS form
@@ -48,7 +49,7 @@ function App() {
 
   return (
     <div>
-          <h1>The Lucky Plant App</h1>
+          {/* 
           <button className ={plantSitterView ? 'button-active' : "button"} onClick={() => handleChangeView(true)}> I am a Plant Sitter</button>
           <button className ={!plantSitterView ? 'button-active' : "button"} onClick={() => handleChangeView(false)}>I am a Plant Owner</button>
           {plantSitterView && <PlantSitterForm 
@@ -60,7 +61,10 @@ function App() {
           <DashboardUsers 
           owners={owners} 
           sitters={sitters} 
-          />
+          /> */}
+          <Navbar />
+          <Routes  />
+          {/* owners={owners} sitters={sitters} parentCallBack={handleOwnerData} parentCB={handleSitterData} */}
           
     </div>
   );

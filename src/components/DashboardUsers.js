@@ -14,22 +14,24 @@ function DashboardUsers(props){
 
     return ( 
         <div className ="Dashboard">
-            <h2> Welcome to the Dashboard</h2>
-            <h4> Here are the current owners </h4>
+            <h2> Hello, </h2>
+            {/* <h4> Here are the current owners </h4>
             <ul>
                 {
-                    props.owners.map((owners) => (
-                        <div >
-                            <li> Name: {owners.nameOwner}</li>
-                            <li> Location: {owners.locationOwner} </li>
-                            <li> # of plants: {owners.plantsOwner} </li>
-                            <li> Start Date: {owners.startDateOwner} </li>
-                            <li> End Date:{owners.endDateOwner} </li>
+                    props.owners.map((owners, i) => (
+                        <div key = {i} >
+                            <li > Name: {owners.nameOwner}</li>
+                            <li > Location: {owners.locationOwner} </li>
+                            <li > # of plants: {owners.plantsOwner} </li>
+                            <li > Phone: {owners.phoneOwner} </li>
+                            <li > Start Date: {owners.startDateOwner.toString()} </li>
+                            <li > End Date:{owners.endDateOwner.toString()} </li>
                         </div>
                     ))
                 }
-            </ul>
-            <h4> Here are the current sitters </h4>
+            </ul> */}
+            <h4> Here are the available sitters </h4>
+            <h5> Click on their name to get in touch with them</h5>
             <ul>
                 {
                     props.sitters.map((sitters, j) => (
