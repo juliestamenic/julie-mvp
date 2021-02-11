@@ -34,11 +34,13 @@ function App() {
     let newOwners = [...owners, ownerData];
     setOwners(newOwners)
     //console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
-    }
+    history.push('/plant-sitting-requests');  
+  }
+
 
   // to get data from PS form
   function addSitter(sitterData) {
-    console.log(sitterData, "In App JS OK ")
+    // console.log(sitterData, "In App JS OK ")
     let newSitters = [...sitters, sitterData];
     setSitters(newSitters)
     // let newSitter = {nameSitter: sitterData.nameSitter, locationSitter: sitterData.locationSitter}
@@ -56,7 +58,7 @@ function App() {
     <div>
   
           <Navbar />
-          <Routes sitters={sitters} addSitter={()=> addSitter} owners={owners} onAddOwner={addOwner} />
+          <Routes sitters={sitters} addSitter={()=> addSitter} owners={owners} addOwner={() =>addOwner} />
          
     </div>
   );

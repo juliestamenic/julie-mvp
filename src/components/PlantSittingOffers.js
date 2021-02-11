@@ -11,11 +11,11 @@ function PlantSittingOffers(props){
                 {
                     props.sitters.map((sitters, k) => (
                         <div key={k}>
-                            <li> {sitters.nameSitter}</li>
-                            <li>{sitters.locationSitter} </li>
-                            {/* <li>Plants : {sitters.plantsSitter} </li>
-                            <li> Start Date: {sitters.startDateSitter.toString()} </li>
-                            <li> End Date: {sitters.endDateSitter.toString()} </li> */}
+                            <li> Name: {sitters.nameSitter}</li>
+                            <li>Location : {sitters.locationSitter} </li>
+                            {/* <li>Phone Number : {sitters.phoneSitter} </li> */}
+                            <li> Unavailable from: {sitters.startDateSitter.toString()} </li>
+                            <li> To: {sitters.endDateSitter.toString()} </li>
                         </div>
                     ))
                 }

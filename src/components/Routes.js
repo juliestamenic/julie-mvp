@@ -27,8 +27,8 @@ function Routes(props) {
             </Route>
     
             {/* Plant Owner */}
-            <Route path="/plant-owner" exact>
-                <PlantOwnerForm  onAddOwner={props.addOwner}/>
+            <Route exact path="/plant-owner"
+            render = {() => <PlantOwnerForm addOwner={props.addOwner()}/>}>
             </Route>
 
             <Route path="/plant-sitting-offers">

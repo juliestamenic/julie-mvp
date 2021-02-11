@@ -13,9 +13,9 @@ function PlantSittingRequests(props){
                         <div key={j}>
                             <li> {owners.nameOwner}</li>
                             <li>{owners.locationOwner} </li>
-                            {/* <li>Plants : {sitters.plantsSitter} </li>
-                            <li> Start Date: {sitters.startDateSitter.toString()} </li>
-                            <li> End Date: {sitters.endDateSitter.toString()} </li> */}
+                            {/* <li>Phone Number : {owners.phoneOwner} </li> */}
+                            <li> Start Date: {owners.startDateOwner.toString()} </li>
+                            <li> End Date: {owners.endDateOwner.toString()} </li>
                         </div>
                     ))
                 }
