@@ -91,10 +91,10 @@ function handleSubmit(event) {
             endDate={ endDateSitterValue }
             handleChangeDates={ handleChangeDates }
           />
-          <button type="submit" > Save My Profile</button>
+          <button type="submit"> Save My Profile and *See Matching Offers - Soon to be releaed*</button>
        
        </form>
-       <button onClick={(e) => history.push('/plant-sitting-requests')}>See current Offers</button>
+       {/* <button onClick={(e) => history.push('/plant-sitting-requests')}>See all Offers</button> */}
       </div>
     )
 }

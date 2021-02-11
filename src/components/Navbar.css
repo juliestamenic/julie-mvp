@@ -5,3 +5,11 @@
 .Navbar ul {
     padding: 0;
 }
+
+.navLink {
+    color: black;
+  }
+
+.selected {
+    color: blue;
+  }

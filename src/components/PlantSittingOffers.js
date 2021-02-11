@@ -11,7 +11,7 @@ function PlantSittingOffers(props){
                 {
                     props.sitters.map((sitters, k) => (
                         <div key={k}>
-                            <li> Name: {sitters.nameSitter}</li>
+                            <li onClick = {function (){alert(`${sitters.nameSitter} is located in ${sitters.locationSitter} and his phone number is ${sitters.phoneSitter}`);}}> Name: {sitters.nameSitter}</li>
                             <li>Location : {sitters.locationSitter} </li>
                             {/* <li>Phone Number : {sitters.phoneSitter} </li> */}
                             <li> Unavailable from: {sitters.startDateSitter.toString()} </li>
