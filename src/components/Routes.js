@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomeView from './HomeView';
 import PlantSitterForm from './PlantSitterForm';
 import PlantOwnerForm from './PlantOwnerForm';
-// import DashboardUsers from './DashboardUsers';
+import Test from './Test';
 import PlantSittingRequests from './PlantSittingRequests';
 import PlantSittingOffers from './PlantSittingOffers';
 
@@ -35,10 +35,10 @@ function Routes(props) {
                 <PlantSittingOffers sitters={props.sitters}/>
             </Route>
 
-            {/* Dashboard Users */}
-            {/* <Route path="/dashboard-users">
-                <DashboardUsers owners={props.owners} parentCallBack={props.handleOwnerData} sitters={props.sitters} parentCB={props.handleSitterData}/>
+            {/* <Route path="/test">
+                <Test sitters={props.sitters} owners={props.owners} user={props.user} />
             </Route> */}
+
 
         </Switch>
     );

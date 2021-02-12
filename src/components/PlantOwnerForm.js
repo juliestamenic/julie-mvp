@@ -103,7 +103,7 @@ function handleChangeDates(date, name) {
             endDate={endDateOwner}
             handleChangeDates={ handleChangeDates }
           />
-         <button type="submit" > Save my Profile and *See Matching Requests - Soon to be releaed*</button>
+         <button type="submit" > Find a sitter in my City</button>
        </form>
        
        {/* <button onClick={(e) => history.push('/plant-sitting-offers')}> Find a Plant-Sitter</button> */}
