@@ -1,18 +1,14 @@
 import React , {useState} from 'react';
 import CalendarSitter from "./CalendarSitter";
 import BasicInfoForm from './BasicFormInfo'
-import { useHistory } from 'react-router-dom';
-
 
 function PlantSitterForm(props)  {
 
-  const [nameSitterValue , setNameSitterValue] = React.useState('');
-  const [locationSitterValue , setLocationSitterValue] = React.useState('');
-  // const [plantsSitter , setPlantsSitter] = useState(0);
-  const [phoneSitterValue , setPhonesitterValue] = React.useState('');
-  const [startDateSitterValue, setStartDateSitterValue] = useState('');
-  const [endDateSitterValue, setEndDateSitterValue] = useState('');
-  const history = useHistory();
+  const [name , setName] = React.useState('');
+  const [location , setLocation] = React.useState('');
+  const [phone , setPhone] = React.useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
 
 //Handle change for name and location
@@ -20,42 +16,31 @@ function PlantSitterForm(props)  {
     // console.log(event.target.value)
     switch (event.target.name) {
       case "name":
-        setNameSitterValue(event.target.value);
+        setName(event.target.value);
         break;
       case "location":
-        setLocationSitterValue(event.target.value);
+        setLocation(event.target.value);
         break;
       case "phone":
-        setPhonesitterValue(event.target.value);
+        setPhone(event.target.value);
       break;
       default:
         break;
     }
  }
 
- //Plant counter
-  // const addPlant = (event) => {
-  //   event.preventDefault()
-  //   setPlantsSitter(plantsSitter +1)
-  // }
-
-  // const removePlant = (event) => {
-  //   event.preventDefault()
-  //   setPlantsSitter(plantsSitter -1)
-  // }
-
  //Calendar dates
 
 function handleChangeDates(date, name) {
   if (name==="startDate") 
   {
-    setStartDateSitterValue(date)
-    console.log(`Startdate:" ${startDateSitterValue}`)
+    setStartDate(date)
+    console.log(`Startdate:" ${startDate}`)
   }
   if (name==="endDate") 
   {
-    console.log(`EndDate:" ${endDateSitterValue}`)
-    setEndDateSitterValue(date)
+    console.log(`EndDate:" ${endDate}`)
+    setEndDate(date)
   }
 }
 
@@ -64,12 +49,11 @@ function handleSubmit(event) {
   event.preventDefault();
   // console.log(
   // `A request has been logged: 
-  // From ${nameSitter} in ${locationSitter} with phone ${phoneSitter} unavailable from ${startDateSitter} to ${endDateSitter}
+  // From ${name${location} with phone ${phone} unavailable from ${startDate} to ${endDate}
   // `)
-  let sitterData = {nameSitter:nameSitterValue, locationSitter:locationSitterValue, phoneSitter:phoneSitterValue, startDateSitter:startDateSitterValue, endDateSitter:endDateSitterValue}
-  //props.sitters=[...props.sitters, sitterData];
+  let sitterData = {name, location, phone, startDate, endDate}
   props.addSitter(sitterData)
-  console.log(props.addSitter, sitterData);
+  console.log('sitterData: ', sitterData);
   // setLocationSitter("");
   // setNameSitter("");
   // setPhonesitter("")
@@ -81,20 +65,18 @@ function handleSubmit(event) {
       <div>
         <form onSubmit={handleSubmit}> 
           <BasicInfoForm
-            name={nameSitterValue}
+            name={name}
             handleChange = {handleChange}
-            location = {locationSitterValue}
-            phone = {phoneSitterValue}
+            location = {location}
+            phone = {phone}
           />
           <CalendarSitter
-            startDate={ startDateSitterValue }
-            endDate={ endDateSitterValue }
+            startDate={ startDate }
+            endDate={ endDate }
             handleChangeDates={ handleChangeDates }
           />
-          <button type="submit"> Save My Profile and *See Matching Offers - Soon to be releaed*</button>
-       
+          <button type="submit"> Look for plants to sit in my city</button>
        </form>
-       {/* <button onClick={(e) => history.push('/plant-sitting-requests')}>See all Offers</button> */}
       </div>
     )
 }

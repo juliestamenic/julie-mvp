@@ -1,18 +1,18 @@
 import React , {useState} from 'react';
 import Calendar from './Calendar';
 import BasicInfoForm from './BasicFormInfo'
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 
 function PlantOwnerForm(props)  {
 
-  const [nameOwner , setNameOwner] = React.useState('');
-  const [locationOwner , setLocationOwner] = React.useState('');
-  const [plantsOwner , setPlantsOwner] = useState(0);
-  const [phoneOwner , setPhoneOwner] = React.useState('');
-  const [startDateOwner, setStartDateOwner] = useState('');
-  const [endDateOwner, setEndDateOwner] = useState('');
-  const history = useHistory();
+  const [name , setName] = React.useState('');
+  const [location , setLocation] = React.useState('');
+  const [plants , setPlants] = useState(0);
+  const [phone , setPhone] = React.useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  // const history = useHistory();
       
 //Handle change for town and radius
   function handleChange(event) {
@@ -20,16 +20,16 @@ function PlantOwnerForm(props)  {
     // console.log(event.target.value)
     switch (event.target.name) {
       case "name":
-        setNameOwner(event.target.value);
+        setName(event.target.value);
         break;
       case "plants":
-        setPlantsOwner(event.target.value);
+        setPlants(event.target.value);
         break;
       case "location":
-        setLocationOwner(event.target.value);
+        setLocation(event.target.value);
         break;
       case "phone":
-        setPhoneOwner(event.target.value);
+        setPhone(event.target.value);
         break;
       default:
         break;
@@ -40,12 +40,12 @@ function PlantOwnerForm(props)  {
 
   const addPlant = (event) => {
     event.preventDefault()
-    setPlantsOwner(plantsOwner +1)
+    setPlants(plants +1)
   }
 
   const removePlant = (event) => {
     event.preventDefault()
-    setPlantsOwner(plantsOwner -1)
+    setPlants(plants -1)
   }
 
 //Calendar dates
@@ -53,11 +53,11 @@ function PlantOwnerForm(props)  {
 function handleChangeDates(date, name) {
   if (name==="startDate") 
   {
-    setStartDateOwner(date)
+    setStartDate(date)
   }
   if (name==="endDate") 
   {
-    setEndDateOwner(date)
+    setEndDate(date)
   }
 }
 
@@ -66,19 +66,19 @@ function handleChangeDates(date, name) {
       event.preventDefault();
       // console.log(
       // `A request has been logged: 
-      // From ${nameOwner} in ${locationOwner} for ${plantsOwner} plant(s) from ${startDateOwner} to ${endDateOwner}
+      // From ${name} in ${location} for ${plants} plant(s) from ${startDate} to ${endDate}
       // `);
       //defines an object with data
-      let ownerData = {nameOwner:nameOwner, locationOwner:locationOwner, plantsOwner:plantsOwner, phoneOwner:phoneOwner, startDateOwner:startDateOwner, endDateOwner:endDateOwner}
+      let ownerData = {name:name, location:location, plants:plants, phone:phone, startDate:startDate, endDate:endDate}
       // sends it back to parent (App)
       props.addOwner(ownerData)
       //Reset fields
-      setLocationOwner("");
-      setNameOwner("");
-      setPlantsOwner(0);
-      setStartDateOwner("");
-      setEndDateOwner("");
-      setPhoneOwner("");
+      setLocation("");
+      setName("");
+      setPlants(0);
+      setStartDate("");
+      setEndDate("");
+      setPhone("");
   }
 
  
@@ -86,27 +86,25 @@ function handleChangeDates(date, name) {
       <div>
         <form onSubmit={handleSubmit}> 
           <BasicInfoForm
-            name={nameOwner}
+            name={name}
             handleChange = {handleChange}
-            location = {locationOwner}
-            phone={phoneOwner}
+            location = {location}
+            phone={phone}
           />
 
           <label> Number of Plants to be sitted
             <button onClick={addPlant}> + </button>
             <button onClick={removePlant}> - </button>
-            {plantsOwner}
+            {plants}
           </label>
          
           <Calendar
-            startDate={startDateOwner}
-            endDate={endDateOwner}
+            startDate={startDate}
+            endDate={endDate}
             handleChangeDates={ handleChangeDates }
           />
          <button type="submit" > Find a sitter in my City</button>
        </form>
-       
-       {/* <button onClick={(e) => history.push('/plant-sitting-offers')}> Find a Plant-Sitter</button> */}
       </div>
     )
 }

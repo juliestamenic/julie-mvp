@@ -4,9 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import HomeView from './HomeView';
 import PlantSitterForm from './PlantSitterForm';
 import PlantOwnerForm from './PlantOwnerForm';
-import Test from './Test';
+// import Test from './Test';
 import PlantSittingRequests from './PlantSittingRequests';
 import PlantSittingOffers from './PlantSittingOffers';
+import PlantSittingResults from './PlantSittingResults';
 
 
 function Routes(props) {
@@ -23,7 +24,7 @@ function Routes(props) {
             </Route>
 
             <Route path="/plant-sitting-requests">
-                <PlantSittingRequests owners={props.owners}  />
+                <PlantSittingRequests sitter={props.sitter} owners={props.owners} />
             </Route>
     
             {/* Plant Owner */}
@@ -32,12 +33,12 @@ function Routes(props) {
             </Route>
 
             <Route path="/plant-sitting-offers">
-                <PlantSittingOffers sitters={props.sitters}/>
+                <PlantSittingOffers owner={props.owner} sitters={props.sitters}/>
             </Route>
 
-            {/* <Route path="/test">
-                <Test sitters={props.sitters} owners={props.owners} user={props.user} />
-            </Route> */}
+            <Route path="/plant-sitting-results">
+                <PlantSittingResults users={props.users} me={props.me} />
+            </Route>
 
 
         </Switch>

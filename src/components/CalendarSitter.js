@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const CalendarSitter = ({ startDate, endDate, handleChangeDates }) => (
 
   <div> <h3> Unavailabilities </h3>
-    <label> Beginning date
+    <label> Start
     <DatePicker 
       name = "startDate"
       selected={startDate}
@@ -21,7 +21,7 @@ const CalendarSitter = ({ startDate, endDate, handleChangeDates }) => (
       autoComplete="off"
     />
     </label>
-    <label> End date
+    <label> End
     <DatePicker
       name = "endDate"
       selected={endDate}
