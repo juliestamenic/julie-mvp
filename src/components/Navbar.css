@@ -3,13 +3,32 @@
 } */
 
 .Navbar ul {
-    padding: 0;
+  list-style-type: none;
 }
 
 .navLink {
-    color: black;
+    color: #F6A8C1;
   }
 
 .selected {
-    color: darkgreen;
+    color: white;
+    font-weight: bold;
   }
+
+  nav {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav a {
+    padding: 5px;
+  }
+  

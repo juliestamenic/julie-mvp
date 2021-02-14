@@ -5,8 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #1B3027;
-  color: white; */
+  background-color: #1B3027;
+  color: white;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 25px 50px 75px 100px;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+::placeholder {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 code {

@@ -48,9 +48,9 @@ function App() {
   // to get data from PS form
   function addSitter(sitterData) {
     // console.log(sitterData, "In App JS OK ")
-    let newSitters = [...sitters, sitterData];
-    setSitter(sitterData);
-    setSitters(newSitters)
+    let newSitters = [...sitters, sitterData]; // no need
+    setSitter(sitterData);  // no need
+    setSitters(newSitters)  // no need
     setMe(sitterData);
     setUsers(initialOwners)
     // let newSitter = {nameSitter: sitterData.nameSitter, locationSitter: sitterData.locationSitter}
@@ -74,6 +74,9 @@ function App() {
             me={me}
             users={users}
           />
+
+<img id="Logo" src="theluckyplant.jpg" alt="TLP Logo"/>
+
     </div>
   );
 }

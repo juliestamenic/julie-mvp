@@ -8,3 +8,30 @@
   background-color: black;
   border-radius: 4px;
 }
+
+#Logo {
+  width: 250px;
+  height: 250px;
+}
+
+form {
+  padding-top: 25px;
+}
+
+#buttonOwner{
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+#buttonSitter{
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.HomeView{
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+}
+
+span::before { content: '\A'; white-space: pre; }

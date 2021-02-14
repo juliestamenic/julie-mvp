@@ -75,7 +75,7 @@ function handleSubmit(event) {
             endDate={ endDate }
             handleChangeDates={ handleChangeDates }
           />
-          <button type="submit"> Look for plants to sit in my city</button>
+          <button id="buttonSitter" type="submit"> Look for plants to sit in my city</button>
        </form>
       </div>
     )

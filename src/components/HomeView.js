@@ -9,8 +9,7 @@ function HomeView() {
             <p><small>Dear Plant Lovers, 
                 What about finding the perfect person to take care of your plants while you are away?
                 Or finding some great plant sitting opportunities?
-                
-                You are in the right place!  </small></p>
+                <span>You are in the right place!</span>  </small></p>
         
         </div>
     );
