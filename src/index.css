@@ -8,19 +8,29 @@ body {
   background-color: #1B3027;
   color: white;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Avenir;
+  /* font-family: 'Courier New', Courier, monospace; */
   padding: 25px 50px 75px 100px;
 }
 
 button {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Avenir;
 }
 
 ::placeholder {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Avenir;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: Rockwell;
+  src: url(/src/Fonts/rockwell-nova-cufonfonts-webfont/RockwellNovaCond-Light.woff);
+  font-family: Avenir;
+  src: url(/src/Fonts/Avenir\ Next\ Font.ttf)
+}
+
+

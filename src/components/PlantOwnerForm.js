@@ -83,7 +83,7 @@ function handleChangeDates(date, name) {
 
  
     return (
-      <div>
+      <div> 
         <form onSubmit={handleSubmit}> 
           <BasicInfoForm
             name={name}
@@ -92,7 +92,7 @@ function handleChangeDates(date, name) {
             phone={phone}
           />
 
-          <label> Number of Plants to be sitted
+          <label> <p> Number of Plants to be sitted</p>
             <button onClick={addPlant}> + </button>
             <button onClick={removePlant}> - </button>
             {plants}
@@ -103,7 +103,7 @@ function handleChangeDates(date, name) {
             endDate={endDate}
             handleChangeDates={ handleChangeDates }
           />
-         <button id="buttonOwner" type="submit" > Find a sitter in my City</button>
+         <button id="buttonOwner" type="submit" > BROWSE SITTERS AROUND ME</button>
        </form>
       </div>
     )

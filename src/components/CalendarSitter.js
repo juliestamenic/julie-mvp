@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const CalendarSitter = ({ startDate, endDate, handleChangeDates }) => (
 
-  <div> <h3> Unavailabilities </h3>
+  <div> <p> Unavailabilities* </p>
     <label> Start
     <DatePicker 
       name = "startDate"

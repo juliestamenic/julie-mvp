@@ -7,17 +7,18 @@
 }
 
 .navLink {
-    color: #F6A8C1;
+    color: white;
+    text-transform: uppercase;
   }
 
 .selected {
-    color: white;
+    color: #FFDE59;
     font-weight: bold;
   }
 
-  nav {
+  /* nav {
     border-bottom: 1px solid #ccc;
-  }
+  } */
   
   nav ul {
     list-style-type: none;

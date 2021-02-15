@@ -15,23 +15,39 @@
 }
 
 form {
-  padding-top: 25px;
+  padding-top: 35px;
+  border:1px solid white;
+  display: inline-block;
 }
 
 #buttonOwner{
   margin-top: 25px;
-  font-weight: bold;
+  background-color: black;
+  color: white;
 }
 
 #buttonSitter{
   margin-top: 25px;
-  font-weight: bold;
+  background-color: black;
+  color: white;
 }
 
 .HomeView{
   margin: auto;
-  width: 30%;
+  width: 45%;
   padding: 10px;
 }
 
 span::before { content: '\A'; white-space: pre; }
+
+
+.filteredResults {
+  list-style-type: none;
+  border: lightcoral 2px;
+}
+
+#Results {
+    display:inline-block;
+    border:2px solid white;
+    padding:20px;
+}

@@ -9,6 +9,7 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
             value={name}
             onChange={handleChange}
             required
+            autocomplete="off"
             >
             </input>
           </label>
@@ -20,9 +21,9 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
            onChange={handleChange}
            required>
            <option id="empty" ></option>
-            <option id="Barcelona" >Barcelona</option>
-            <option id="Paris" >Paris</option>
-            <option id="London" >London</option>
+            <option id="Barcelona" >Barcelona 🇪🇸</option>
+            <option id="Paris" >Paris 🇫🇷</option>
+            <option id="London" >London 🇬🇧</option>
           </select>
           </label>
 
@@ -33,6 +34,7 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
             value={phone}
             onChange={handleChange}
             required
+            autocomplete="off"
             >
             </input>
           </label>

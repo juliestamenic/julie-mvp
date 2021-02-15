@@ -6,7 +6,7 @@ function PlantSittingResults({ me, users }){
   const popUserData = (e, user) => {
     e.preventDefault();
     return alert(
-      `${user.name} is located in ${user.location} and his phone number is ${user.phone}`
+      `Reach ${user.name} located in ${user.location} at 📞${user.phone}`
       );
   }
     return ( 
@@ -16,9 +16,10 @@ function PlantSittingResults({ me, users }){
           {
             filteredUsers.map((user, i) => (
               <li
+                id = "Results"
                 key={ `${user}-${i}`}
                 onClick={ (e) => popUserData(e, user)} >
-                { user.name }
+                {user.name} 
               </li>
             ))
           }
