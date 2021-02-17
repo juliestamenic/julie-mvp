@@ -20,6 +20,7 @@ function PlantSittingResults({ me, users }){
                 key={ `${user}-${i}`}
                 onClick={ (e) => popUserData(e, user)} >
                 {user.name} 
+                <p>👋</p>
               </li>
             ))
           }

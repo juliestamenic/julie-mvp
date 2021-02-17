@@ -15,10 +15,21 @@ body {
 
 button {
   font-family: Avenir;
+  margin-right: 10px;
 }
 
 ::placeholder {
   font-family: Avenir;
+}
+
+input {
+  font-family: Avenir;
+  margin-left: 10px;
+}
+
+select {
+  font-family: Avenir;
+  margin-left: 10px;
 }
 
 code {

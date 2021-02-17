@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Calendar = ({ startDate, endDate, handleChangeDates }) => (
 
-  <div> <p> Dates </p>
+  <div> <p> I am looking for someone from / to </p>
     <label> Start date
     <DatePicker 
       name = "startDate"

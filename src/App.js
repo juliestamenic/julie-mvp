@@ -38,11 +38,11 @@ function App() {
   const history = useHistory();
 
 
-  // to get the data from PO form
+  // to get the datas from PO form
   function addOwner(ownerData) {
-    let newOwners = [...owners, ownerData];
-    setOwners(newOwners)
-    setOwner(ownerData);
+    // let newOwners = [...owners, ownerData];
+    // setOwners(newOwners)
+    // setOwner(ownerData);
     setMe(ownerData);
     setUsers(initialSitters)
     //console.log(`Owner Data from APP component:  ${ownerData.locationOwner} ${ownerData.nameOwner}${ownerData.phoneOwner} ${ownerData.plantsOwner} ${ownerData.startDateOwner} ${ownerData.endDateOwner}`)
@@ -54,15 +54,11 @@ function App() {
   // to get data from PS form
   function addSitter(sitterData) {
     // console.log(sitterData, "In App JS OK ")
-    let newSitters = [...sitters, sitterData]; // no need
-    setSitter(sitterData);  // no need
-    setSitters(newSitters)  // no need
+    // let newSitters = [...sitters, sitterData]; // no need
+    // setSitter(sitterData);  // no need
+    // setSitters(newSitters)  // no need
     setMe(sitterData);
     setUsers(initialOwners)
-    // let newSitter = {nameSitter: sitterData.nameSitter, locationSitter: sitterData.locationSitter}
-    // setSitters(sitters => [...sitters, newSitter])
-    // history.push('/plant-sitting-requests');
-    //console.log(`Sitter Data from APP component: ${sitterData.locationSitter} ${sitterData.nameSitter}  ${sitterData.startDateSitter} ${sitterData.endDateSitter}`)
     history.push('/plant-sitting-results');
   }
 

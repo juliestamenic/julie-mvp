@@ -9,7 +9,7 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
             value={name}
             onChange={handleChange}
             required
-            autocomplete="off"
+            autoComplete="nope"
             >
             </input>
           </label>
@@ -34,7 +34,7 @@ const BasicInfoForm = ({name, handleChange, location , phone }) => (
             value={phone}
             onChange={handleChange}
             required
-            autocomplete="off"
+            autoComplete="nope"
             >
             </input>
           </label>

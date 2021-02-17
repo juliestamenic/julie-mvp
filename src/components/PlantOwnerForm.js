@@ -92,7 +92,7 @@ function handleChangeDates(date, name) {
             phone={phone}
           />
 
-          <label> <p> Number of Plants to be sitted</p>
+          <label> <p> # of plants to be sitted</p>
             <button onClick={addPlant}> + </button>
             <button onClick={removePlant}> - </button>
             {plants}
