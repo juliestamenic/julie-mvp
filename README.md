@@ -41,6 +41,6 @@ On the other hand,
 If you have room at home and would like to give some care to a few extra plants for some extra income. The Lucky Plant can help you find opportunities! 
 ###### Architecture
 
-https://user-images.githubusercontent.com/69206800/108358613-3bd6fe00-71ef-11eb-97ec-4d71870ae0a1.png
+![Architecture](public/MVP_Architecture.png)
 
         _This is a student project that was created at[CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
