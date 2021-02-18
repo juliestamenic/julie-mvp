@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import './App.css';
-// import PlantOwnerForm from "./components/PlantOwnerForm"
-// import DashboardUsers from "./components/DashboardUsers"
 import Navbar from "./components/Navbar"
 import Routes from "./components/Routes"
 import { useHistory } from 'react-router-dom';
@@ -28,13 +26,12 @@ let initialOwners = [
 function App() {
 
  
-  const [owners, setOwners] = useState(initialOwners);
-  const [sitters, setSitters] = useState(initialSitters);
-  const [sitter, setSitter] = useState('');
-  const [owner, setOwner] = useState('');
+  // const [owners, setOwners] = useState(initialOwners);
+  // const [sitters, setSitters] = useState(initialSitters);
+  // const [sitter, setSitter] = useState('');
+  // const [owner, setOwner] = useState('');
   const [me, setMe] = useState('')
   const [users, setUsers] = useState([])
-  //const [user , setUser] = useState(initialOwners[0]) 
   const history = useHistory();
 
 
@@ -67,11 +64,11 @@ function App() {
   
           <Navbar />
           <Routes
-            sitter={sitter}
-            sitters={sitters}
+            // sitter={sitter}
+            // sitters={sitters}
             addSitter={()=> addSitter}
-            owner={owner}
-            owners={owners}
+            // owner={owner}
+            // owners={owners}
             addOwner={() =>addOwner}
             me={me}
             users={users}

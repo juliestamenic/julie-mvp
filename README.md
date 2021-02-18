@@ -31,6 +31,16 @@ App
             Calendar
         Matching Requests 
 
+##### Description
 
+There is nothing worse than coming back from holidays and find your beloved plants dead.  
+After discussing with friends having plants and struggling when away.
+Because it is nicer to set off with peace of mind! 
+
+On the other hand, 
+If you have room at home and would like to give some care to a few extra plants for some extra income. The Lucky Plant can help you find opportunities! 
+###### Architecture
+
+https://user-images.githubusercontent.com/69206800/108358613-3bd6fe00-71ef-11eb-97ec-4d71870ae0a1.png
 
         _This is a student project that was created at[CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
