@@ -36,6 +36,6 @@ If you have room at home and would like to give some care to a few extra plants 
 ![Architecture](public/MVP_Architecture.png)
 
 
-![Logo](public/theluckyplant.png)
+![Logo](public/theluckyplant.jpg)
 
         _This is a student project that was created at[CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
